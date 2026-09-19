@@ -93,7 +93,7 @@ function reducer(state: GameState, action: Action): GameState {
       if (state.phase === "steal") {
         const scores: [number, number] = [...state.scores];
         scores[state.activeTeam] += state.pot;
-        return { ...state, phase: "done", lastAward: state.activeTeam };
+        return { ...state, scores, phase: "done", lastAward: state.activeTeam };
       }
 
       // phase === "playing"
